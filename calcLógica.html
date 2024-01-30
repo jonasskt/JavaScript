@@ -1,0 +1,40 @@
+<html>
+<body>
+    
+    <script>
+var numeroInicial = prompt("Primeiro número...")
+
+var sinal = prompt("Qual sinal da operação?")
+while(sinal != "*" && sinal !=  "+" &&  sinal != "/" &&  sinal != "-"){
+    alert("Inválido!")
+     sinal = prompt("Por favor, use sinais válidos! ex: +, -, /, *")
+    
+}
+
+var numeroFinal = prompt("Segundo número...")
+var resultado = 0;
+
+if(sinal == "*"){
+        resultado = numeroInicial * numeroFinal;
+}else if(sinal == "/"){
+        resultado = numeroInicial / numeroFinal;
+}else if(sinal == "+"){
+        resultado =numeroInicial * numeroFinal;
+}else if(sinal == "-"){
+        resultado = numeroInicial * numeroFinal;
+}
+   
+
+alert("O resultado da operação é: "+resultado)
+
+
+
+
+
+
+
+    </script>
+</body>
+
+
+</html>
