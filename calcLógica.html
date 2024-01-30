@@ -11,6 +11,10 @@ while(sinal != "*" && sinal !=  "+" &&  sinal != "/" &&  sinal != "-"){
     
 }
 
+numeroFinal = parseInt(numeroFinal)
+
+numeroInicial = parseInt(numeroInicial)
+
 var numeroFinal = prompt("Segundo número...")
 var resultado = 0;
 
@@ -19,9 +23,9 @@ if(sinal == "*"){
 }else if(sinal == "/"){
         resultado = numeroInicial / numeroFinal;
 }else if(sinal == "+"){
-        resultado =numeroInicial * numeroFinal;
+        resultado =numeroInicial + numeroFinal;
 }else if(sinal == "-"){
-        resultado = numeroInicial * numeroFinal;
+        resultado = numeroInicial - numeroFinal;
 }
    
 
