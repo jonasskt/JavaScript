@@ -1,0 +1,62 @@
+<html>
+    <link rel="stylesheet" href="style.css">
+<body>
+   
+    <style>
+
+        .conteudo h2{
+            font-size: 50px;
+            color: blue;
+            cursor: pointer;
+        }
+        .conteudo span{
+            color: black;
+            font-size: 30px;
+        }
+        .conteudo p{
+            overflow: hidden;
+            height: 0;
+            width: 50%;
+            transition: 1s
+        }
+
+
+        .mostrar{
+            height: auto !important;
+        }
+
+
+
+    </style>
+
+
+
+
+    <div class="conteudo">
+        <h2>Lorem Ipsum <span>Ver mais...</span></h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ipsum mi, dapibus consectetur condimentum in, dapibus vitae mi. Aenean quis nunc laoreet, porttitor lacus vel, porta massa. Ut eget posuere enim. Vivamus sodales mollis dolor, at pellentesque neque venenatis ut. Morbi lacus purus, sollicitudin in velit blandit, consequat blandit leo. Nulla commodo gravida lacus nec semper. Duis enim nunc, accumsan ac suscipit et, congue ut ipsum. Sed venenatis vitae ante eget dignissim. Mauris orci neque, tempor ac cursus et, pulvinar nec ligula. Morbi eleifend velit at urna condimentum aliquet eget id lorem. Integer augue nibh, ultricies a purus sit amet, bibendum iaculis neque. Vivamus ac augue in tellus eleifend faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ut consequat dui.</p>
+    </div>
+
+
+
+   
+   <script>
+
+  span = document.querySelector(".conteudo span")
+  span.addEventListener('click', function(){ 
+      
+    var content = document.querySelector('.conteudo p');
+
+
+       if(content.classList.contains('mostrar')){
+        document.querySelector('.conteudo span').innerHTML = 'Ver mais...'
+        content.classList.remove('mostrar')
+       }else{
+        document.querySelector('.conteudo span').innerHTML = 'Ver menos...'
+        document.querySelector('.conteudo p').classList.add('mostrar')}
+})
+
+
+    </script>
+</body>
+</html>
