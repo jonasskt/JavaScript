@@ -1,0 +1,99 @@
+<html>
+    <body>
+        <style>
+            .container{
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                height: 40%;
+                background-color: red;
+                
+                
+            }
+
+            .botao1{
+                border-radius: 7px;
+                margin-top: 15%;
+                cursor: pointer;
+                padding: 10px 20px;
+            }
+            .container2{
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                height: 40%;
+                background-color: black;   
+            }
+            .botao2{
+                position: absolute;
+                border-radius: 7px;
+                margin-top: 15%;
+                cursor: pointer;     
+                padding: 10px 20px;                       
+            }
+            .botaos{
+                position: absolute;
+                text-align: center;
+                margin-left: 47%;
+                margin-top:15%;
+            
+            }
+            .container2 h2{
+                color: white;
+            }
+            .container h2{
+                color: white;
+            }
+
+            
+        </style>
+        
+        <div style="opacity: 0;" class="container2"><h2>Você escolheu o preto!</h2></div>
+        <div style="opacity: 1;" class="container"><h2>Você escolheu vermelho!</h2></div>
+   
+        <div class="botaos">
+
+            <button class="botao1">Red</button>
+            <button class="botao2">Black</button>
+        </div>
+
+
+
+
+        <script>
+
+            var lastIndex = 0;
+            var black = document.querySelectorAll('.container2')
+            var red = document.querySelectorAll('.container')
+
+            black.forEach((item, index)=>{
+                document.querySelectorAll('.botao2')[index].addEventListener('click', ()=>{
+                  
+                    var ativa = document.querySelectorAll(".container2")[lastIndex];
+                    var off = document.querySelectorAll('.container')[index]
+
+                    ativa.style.opacity= 1;
+                    off.style.opacity=0;
+                }
+                )
+            })
+
+            red.forEach((item, index)=>{
+                document.querySelectorAll('.botao1')[index].addEventListener('click', ()=>{
+                  
+                    var ativa = document.querySelectorAll(".container")[lastIndex];
+                    var off = document.querySelectorAll('.container2')[index]
+
+                    ativa.style.opacity= 1;
+                    off.style.opacity=0;
+                }
+                )
+            })
+        
+
+
+
+        </script>
+    
+    </body>
+</html>
