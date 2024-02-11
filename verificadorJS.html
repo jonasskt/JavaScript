@@ -1,0 +1,41 @@
+<html>
+    <body>
+        <style>
+            
+            
+        </style>  
+        <h2>Escolha apenas números</h2>
+        <div class="container">
+            <input class="demo" type="text">
+            <button type="button" onclick="enviar()">Enviar</button>
+        </div>
+        <p class="p1"></p>
+
+    <script>    
+          function enviar(){
+           const msg = document.querySelector('.p1');
+            msg.innerHTML = "";
+
+            var x = document.querySelector('.demo').value;
+           
+          try{
+            if(x.trim()== "") throw "input vazio!";
+            if(isNaN(x)) throw "apenas números!";
+            x = Number(x);
+          
+          }
+          catch(error){
+            document.querySelector('.p1').innerHTML = "<span style='text-align: center'> Erro! : </span>" + error;
+            
+          }
+          finally{
+            document.querySelector('.demo').value = "";
+          }
+}
+
+    </script>
+
+
+
+    </body>
+</html>
