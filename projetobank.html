@@ -1,0 +1,47 @@
+<html>
+<body>
+<script>
+function banco(nome, cpf, saldo=0, valor, saque){
+    this.nome = nome
+    this.cpf = cpf
+    this.valor = valor 
+    this.saque = saque
+
+
+    for(valor = 0; valor += saldo;){
+       console.log(`Transferido: R$${valor}`)
+       break
+    }
+    for(; saque - saldo;){
+        console.log(`Você sacou: ${saque}`)
+        console.log(`Saldo atual: ${saldo - saque}`)
+        break
+    }
+
+    var extrato =  [ `
+    Seu extrato atual é:
+    Saldo diponível: ${saldo}
+    Saques: ${saque}
+    Transferências: ${valor}
+    
+    ` ]
+               
+        
+        
+   
+
+
+}
+
+
+
+let name = new banco("Jona", "000",100,0, 200)
+
+
+
+
+console.log(name.saque)
+
+</script>
+</body>
+</html>
