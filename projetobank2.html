@@ -1,0 +1,56 @@
+<html>
+<body>
+
+<input onclick="banco(this.valor)" class="inp" type="number" placeholder="Valor do saque...">
+<button class="btn" onclick="x = new banco()">Saque</button>
+
+
+
+
+
+<script>
+input = document.querySelector('.inp').value;
+btn = document.querySelectorAll('.btn');
+
+
+
+
+
+
+
+function banco(nome, cpf, saldo=0, valor, saque){
+    this.nome = nome
+    this.cpf = cpf
+    this.valor = valor 
+    this.saque = saque
+
+
+   saque -= saldo
+   valor += saldo
+
+    var extrato =   `
+    Seu extrato atual é:
+    Saques: ${saque}
+    Transferências: ${valor}
+    Saldo diponível: ${saldo}
+    ` 
+console.log(extrato)
+        
+
+
+}
+
+
+
+
+
+var jona = new banco('Jonas', "0000", 2000, 100, 200)
+   
+
+console.log(jona.nome)
+
+
+
+</script>
+</body>
+</html>
