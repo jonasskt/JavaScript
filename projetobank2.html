@@ -1,53 +1,37 @@
 <html>
 <body>
 
-<input onclick="banco(this.valor)" class="inp" type="number" placeholder="Valor do saque...">
-<button class="btn" onclick="x = new banco()">Saque</button>
+<input  class="inp" type="number" placeholder="Valor do Depósito...">
+<button class="btn" onclick="deposito()">Depósito</button>
+<p class="demo"></p>
 
 
 
 
 
 <script>
-input = document.querySelector('.inp').value;
-btn = document.querySelectorAll('.btn');
+
+var saldo = 2000;
 
 
 
+var deposito = function(){
+    var inp = document.querySelector('.inp').value;
+    var demo = document.querySelector('.demo');
+    demo.innerHTML = "";
+    parseInt(inp)   
+
+        var x = [];
 
 
+    if(inp == ""){demo.innerHTML = "Nenhuma movimentação..."}
+    if(inp != 0){ inp - saldo; demo.innerHTML = `Você depositou R$ ${inp} 
+                            </br>   Seu saldo é de R$ ${x}`  }
 
-
-function banco(nome, cpf, saldo=0, valor, saque){
-    this.nome = nome
-    this.cpf = cpf
-    this.valor = valor 
-    this.saque = saque
-
-
-   saque -= saldo
-   valor += saldo
-
-    var extrato =   `
-    Seu extrato atual é:
-    Saques: ${saque}
-    Transferências: ${valor}
-    Saldo diponível: ${saldo}
-    ` 
-console.log(extrato)
-        
+   
 
 
 }
-
-
-
-
-
-var jona = new banco('Jonas', "0000", 2000, 100, 200)
-   
-
-console.log(jona.nome)
 
 
 
