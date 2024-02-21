@@ -1,46 +1,45 @@
 <html>
 <body>
+
+<input  class="inp" type="number" placeholder="Valor do saque...">
+<button class="btn" onclick="this.saque">Saque</button>
+<p class="demo"></p>
+
+
+
+
+
 <script>
-function banco(nome, cpf, saldo=0, valor, saque){
+
+
+
+function banco(nome, cpf, saldo = 2000){
     this.nome = nome
-    this.cpf = cpf
-    this.valor = valor 
-    this.saque = saque
-
-
-    for(valor = 0; valor += saldo;){
-       console.log(`Transferido: R$${valor}`)
-       break
-    }
-    for(; saque - saldo;){
-        console.log(`Você sacou: ${saque}`)
-        console.log(`Saldo atual: ${saldo - saque}`)
-        break
-    }
-
-    var extrato =  [ `
-    Seu extrato atual é:
-    Saldo diponível: ${saldo}
-    Saques: ${saque}
-    Transferências: ${valor}
+    this.cpf = cpf 
     
-    ` ]
-               
-        
-        
-   
+    let saque = document.querySelector('.inp').value;
 
 
+    if(saque == 0){"Não houve saques ainda!"}
+    if(saque != 0){saldo - saque}
+
+    var demo = document.querySelector('.demo')
+    demo.innerHTML = `Você sacou: R$ ${saque}`
+
+
+    var x = saldo - saque
+
+    var extrato =   `
+    Seu extrato atual é:
+    Saques: ${saque}
+    Saldo diponível: ${x}
+    ` 
+console.log(extrato)
 }
 
+console.log(banco())
 
 
-let name = new banco("Jona", "000",100,0, 200)
-
-
-
-
-console.log(name.saque)
 
 </script>
 </body>
