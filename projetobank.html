@@ -1,57 +1,110 @@
 <html>
 <body>
+    <style> 
+        
+    </style>
+<div class="cliente">
 
-<input  class="inp" type="number" placeholder="Valor do saque...">
-<button class="btn" onclick="banco()">Saque</button>
+    <input class="name" type="text" placeholder="Seu nome...">
+    <input class="login" type="number" placeholder="Sua conta...">
+    <button onclick="cliente()">Entrar</button>
+    <p class="client"></p>
+    <p class="client2"></p>
+</div>
+
+    <div class="depo">
+<input  class="inp" type="number" placeholder="Valor do Depósito...">
+<button class="btn" onclick="deposito()">Depósito</button>
 <p class="demo"></p>
+</div>
 
+<div class="retirada">
+    <input class="inp2" type="number" placeholder="Valor do saque...">
+    <button class="btn2" onclick="saque()">Saque</button>
+    <p class="demo2"></p>
 
-
-
-
+</div>
+    <div class="extrato" hidden>
+    <button onclick="extrato()">EXTRATO</button>
+    <p class="ext"></p>
+</div>
 <script>
+ 
+ 
+var cliente = function(){
+    var cliente = document.querySelector('.name').value;
+    var login = document.querySelector('.login').value;
+
+    
+    var client = document.querySelector('.client')
+    var client2 = document.querySelector('.client2')
+    if(cliente != ""){client.innerHTML = ` Olá, ${cliente.toUpperCase()}, seja bem vindo ao nosso banco!` }
+
+
+    if(cliente == ""){client.innerHTML = `Por favor, insira um nome.`}
+    if(login == ""){client2.innerHTML = "Por favor, insira uma conta."}
+    if(login != ""){client2.innerHTML = ""} 
+
+
+    var depo = document.querySelectorAll('.depo');
+    var disp = depo.style.display;
+
+    depo.style.display = cliente == "" ? 'block' : 'none';
+
+    
 
 
 
-function banco(nome, cpf, saldo = 2000){
-    this.nome = nome
-    this.cpf = cpf 
-   
-    var demo = document.querySelector('.demo')
+}
+var saldo = 2000;
+
+
+
+var deposito = function(){
+    var inp = document.querySelector('.inp').value;
+    var demo = document.querySelector('.demo');
     demo.innerHTML = "";
-    
-    let saque = document.querySelector('.inp').value;
-    
-    while(saldo > 0, saque > 0){
-    var x = saldo - saque
-    var y = [];
+    parseInt(inp)   
 
-    y.push(x)
-    break
+    if(inp == ""){demo.innerHTML = "Por favor, digite o valor a ser depositado..."}
+
+
+        
+  var x = saldo += parseInt(inp)  
+
+  if(inp != ""){demo.innerHTML = `Depósito efetuado no valor de R$ ${inp} 
+                </br> Saldo de R$ ${x}`}
+  
 }
 
+
+var saque = function(){
+    var inp2 = document.querySelector('.inp2').value;
+    var demo2 = document.querySelector('.demo2')
+    demo2.innerHTML = "";
+
+    if(inp2 == ""){demo2.innerHTML = "Por favor, digite um valor a ser sacado..."}
+
+
+    var x = saldo -= parseInt(inp2)
+
+    if(inp2 != ""){demo2.innerHTML = `Saque efetuado no valor de R$ ${inp2}
+                        </br> Saldo de R$ ${x}` }
     
-
-
-    if(saque == ""){demo.innerHTML="Não houve saques ainda!"}
-    if(saque != 0){demo.innerHTML=`Você sacou R$ ${saque}
-                                   </br> Saldo disponível: R$ ${y}`}
-
-    
-
-
-    
-
-    var extrato =   `
-    Seu extrato atual é:
-    Saques: ${saque}
-    Saldo diponível: ${y}
-    ` 
-console.log(extrato)
 }
 
-console.log(banco())
+var extrato = function(){
+    var ext = document.querySelector('.ext');
+    ext = "";
 
+    ext.innerHTML = `
+    Olá, veja seu extrato abaixo: 
+    </br> Seus depósitos: R$ ${deposito}
+    </br> Seus saques: R$ ${saque}
+    `
+
+
+}
 
 
 </script>
